@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+if(process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -20,9 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // custom
-app.use((req, res, next) => {
-  console.log("middleware worked.");
-  next();
+app.use(function(req, res, next){
+  console.log("middleware worked!");
+  next()
 });
 
 app.use('/', indexRouter);
