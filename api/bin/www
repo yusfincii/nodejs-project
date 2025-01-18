@@ -8,8 +8,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 const {CONNECTION_STRING, PORT} = require('../config/index');
 
-console.log("xxx: ", CONNECTION_STRING);
-
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');

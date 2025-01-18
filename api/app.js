@@ -29,8 +29,10 @@ app.use(function(req, res, next){
   next()
 });
 
-app.use('/', indexRouter);  // endpoint -> http://localhost:3000/
-app.use('/users', usersRouter); // http://localhost:3000/users
+app.use('/api', indexRouter);  // endpoint -> http://localhost:3000/
+//app.use('/users', usersRouter); // http://localhost:3000/users
+//app.use("/auditlogs", require('./routes/auditlogs')); // http://localhost:3000/auditlogs
+//app.use("/categories", require('./routes/categories')); // http://localhost:3000/categories
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
