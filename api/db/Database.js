@@ -13,13 +13,13 @@ class Database{
         return instance;
     }
 
-    async connect(options){
-        try{
+    async connect(options) {
+        try {
             console.log("db connection initializing...");
             let db = await mongoose.connect(options.CONNECTION_STRING);
             this.mongoConnection = db;
             console.log("db connection success!");
-        }catch(err){
+        } catch (err) {
             console.log(err);
             process.exit(1);
         }
